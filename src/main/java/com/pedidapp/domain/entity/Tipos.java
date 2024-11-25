@@ -1,4 +1,4 @@
 package com.pedidapp.domain.entity;
 
-public class Tipos {
+public class Tipos extends Catalogo {
 }

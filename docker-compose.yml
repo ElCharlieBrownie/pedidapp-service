@@ -16,20 +16,20 @@ services:
 
   mysql:
     image: mysql
-    container_name: mysql_database
+    container_name: mysql-db-dev
     environment:
-      MYSQL_ROOT_PASSWORD: 1990
-      MYSQL_DATABASE: pedidappDB
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: pedidapp
       MYSQL_USER: csom
       MYSQL_PASSWORD: 20081987
     ports:
-      - "3307:3306"
+      - "3306:3306"
     networks:
       - spring-network
     volumes:
-      - mysql-volume:/var/lib/mysql
+      - mysql-db-data:/var/lib/mysql
 
 networks:
   spring-network:
 volumes:
-  mysql-volume:
+  mysql-db-data:
