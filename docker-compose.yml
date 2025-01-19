@@ -1,22 +1,15 @@
 version: "3.9"
 services:
-
-  spring-api-image:
-    image: spring-api-image
-    container_name: spring-api-container
-    build:
-      context: .
-      dockerfile: Dockerfile
+  pedidapp-service:
+    build: .
     ports:
       - "8080:8080"
     networks:
       - spring-network
     depends_on:
       - mysql
-
   mysql:
     image: mysql
-    container_name: mysql-db-dev
     environment:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: pedidapp
@@ -28,7 +21,6 @@ services:
       - spring-network
     volumes:
       - mysql-db-data:/var/lib/mysql
-
 networks:
   spring-network:
 volumes:

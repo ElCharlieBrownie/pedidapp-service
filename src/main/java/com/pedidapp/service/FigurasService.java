@@ -17,8 +17,8 @@ public class FigurasService {
         this.figurasRepository = figurasRepository;
     }
 
-    public Figuras create(Figuras user) {
-        return figurasRepository.save(user);
+    public Figuras create(Figuras figura) {
+        return figurasRepository.save(figura);
     }
 
     public Figuras findOne(Long userId) {
